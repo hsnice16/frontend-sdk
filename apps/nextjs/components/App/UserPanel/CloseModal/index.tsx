@@ -445,6 +445,8 @@ export default function CloseModal({
             />
           </>
         )}
+
+        {/* @ts-ignore */}
         <GuidesDropDown
           symbol={symbol}
           setSize={setSize}

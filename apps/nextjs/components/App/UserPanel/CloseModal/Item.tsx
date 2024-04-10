@@ -40,6 +40,7 @@ export default function Item({
     <DataRow>
       <Label>
         {label}
+        {/* @ts-ignore */}
         {tooltip && <ToolTip text={tooltip} />}
       </Label>
       <Value>

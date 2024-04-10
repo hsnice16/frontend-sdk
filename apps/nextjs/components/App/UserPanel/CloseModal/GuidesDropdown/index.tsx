@@ -165,13 +165,11 @@ export default memo(function GuidesDropDown({
   }
 
   return (
-    <>
-      <ContentContainer>
-        {getTriggers()}
-        <DropdownContent isOpen={border}>
-          <GetContent />
-        </DropdownContent>
-      </ContentContainer>
-    </>
+    <ContentContainer>
+      {getTriggers()}
+      <DropdownContent isOpen={border}>
+        <GetContent />
+      </DropdownContent>
+    </ContentContainer>
   );
 });

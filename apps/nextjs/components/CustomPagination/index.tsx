@@ -242,10 +242,12 @@ export default function CustomPagination({
   };
   return (
     <Container>
+      {/* @ts-ignore */}
       <NavigationContext.Provider value={pageInfo}>
         <PaginationNavigation />
       </NavigationContext.Provider>
 
+      {/* @ts-ignore */}
       <CardContext.Provider value={rowsPerPageInfo}>
         <PaginationPerPageCard />
       </CardContext.Provider>

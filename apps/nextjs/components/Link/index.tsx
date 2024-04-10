@@ -76,7 +76,7 @@ export function ExternalLink({
 }) {
   return (
     <StyledLink href={href} target={target} rel={rel} {...rest}>
-      {children}
+      <>{children}</>
     </StyledLink>
   );
 }
@@ -102,7 +102,7 @@ export function ExternalLinkIcon({
       onClick={handleClickExternalLink}
       {...rest}
     >
-      {children}
+      <>{children}</>
       <LinkIcon />
     </LinkIconWrapper>
   );

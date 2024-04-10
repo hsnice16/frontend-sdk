@@ -117,7 +117,7 @@ export default function OpenPositionData() {
   ]);
 
   return (
-    <React.Fragment>
+    <>
       <LabelsWrapper>
         <DisplayLabel
           label="Position Value"
@@ -145,6 +145,6 @@ export default function OpenPositionData() {
       })}
 
       <ActionButton />
-    </React.Fragment>
+    </>
   );
 }

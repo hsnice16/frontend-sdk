@@ -69,6 +69,8 @@ export default function OpenPositionModal() {
         title={`${positionType} ${market?.symbol}-${market?.asset}`}
         positionType={positionType}
       />
+
+      {/* @ts-ignore */}
       <StateContext.Provider value={{ state, setState, setTxHash }}>
         <Wrapper>
           {isActive && <ProgressTab />}

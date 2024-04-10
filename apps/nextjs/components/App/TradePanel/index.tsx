@@ -83,7 +83,7 @@ export default function TradePanel() {
 
   return (
     <Wrapper showStopLoss={showStopLoss}>
-      <React.Fragment>
+      <>
         {isBlacklisted && <BlackList />}
         {isSuspended && <Suspend />}
         <TabWrapper>
@@ -98,7 +98,7 @@ export default function TradePanel() {
           <TradeOverview />
         </Container>
         {showTradeInfoModal && <OpenPositionModal />}
-      </React.Fragment>
+      </>
     </Wrapper>
   );
 }

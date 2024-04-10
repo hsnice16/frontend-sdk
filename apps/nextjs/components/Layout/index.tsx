@@ -60,7 +60,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <HeaderWrap>
         <NavBar />
       </HeaderWrap>
-      <Content>{children}</Content>
+      <Content>
+        <>{children}</>
+      </Content>
       {/* <Footer /> */}
     </Wrapper>
   );

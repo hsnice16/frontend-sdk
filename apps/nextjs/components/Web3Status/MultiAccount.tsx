@@ -401,5 +401,5 @@ export default function MultiAccount() {
     }
   }
 
-  return <React.Fragment> {getContent()} </React.Fragment>;
+  return <> {getContent()} </>;
 }

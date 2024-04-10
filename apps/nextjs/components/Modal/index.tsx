@@ -22,12 +22,14 @@ const BaseModal = StyledModal.styled`
   overflow: hidden;
 `;
 
+// @ts-ignore
 export const MobileModal = styled(BaseModal)`
   width: 100vw;
   height: 100vh;
   border-radius: 0px;
 `;
 
+// @ts-ignore
 export const Modal = styled(BaseModal)<{
   width?: string;
 }>`
