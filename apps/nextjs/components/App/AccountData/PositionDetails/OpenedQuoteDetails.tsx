@@ -406,7 +406,7 @@ function FundingRate({
   const paidAmountBN = toBN(paidAmount).div(1e18);
 
   return (
-    <React.Fragment>
+    <>
       <Row>
         <Label>Paid Funding:</Label>
         <PositionPnl
@@ -448,6 +448,6 @@ function FundingRate({
           </Value>
         </Row>
       )}
-    </React.Fragment>
+    </>
   );
 }
