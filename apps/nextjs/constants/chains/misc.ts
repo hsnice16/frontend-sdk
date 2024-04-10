@@ -1,5 +1,5 @@
 export const APP_URL = "https://cloverfield.exchange";
-export const APP_NAME = "CloverField";
+export const APP_NAME = "Stella Dummy Deployment";
 
 // Muon Configs
 export const MUON_APP_NAME = "symmio";

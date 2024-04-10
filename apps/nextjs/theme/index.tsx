@@ -89,8 +89,7 @@ function colors(): Colors {
       border3: "#2A2E39",
 
       //gradient colors
-      gradLight:
-        "linear-gradient(90deg, #E5EFF3 0%, #A2D4EA 50%, #E5EFF3 100%)",
+      gradLight: "#ff9c68",
       gradError: "linear-gradient(180deg, #472A2A 0%, #21242C 100%)",
 
       hoverGrad: "linear-gradient(90deg, #A6CCDC 0%, #C0E9FA 100%)",

@@ -3,8 +3,12 @@ import styled from "styled-components";
 import ActionButton from "./ActionButton";
 import Column from "components/Column";
 import { RowCenter } from "components/Row";
-import { LottieCloverfield } from "components/Icons";
 import { useStopLossValues } from "@symmio/frontend-sdk/state/trade/hooks";
+import dynamic from "next/dynamic";
+
+const LottieCloverfield = dynamic(
+  () => import("components/Icons/LottieCloverfield")
+);
 
 const SummaryWrap = styled(RowCenter)`
   font-size: 14px;

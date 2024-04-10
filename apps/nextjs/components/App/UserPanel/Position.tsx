@@ -42,7 +42,6 @@ import { Row, RowBetween, RowStart } from "components/Row";
 import {
   EmptyPosition,
   LongArrow,
-  LottieCloverfield,
   NotConnectedWallet,
   Rectangle,
   ShortArrow,
@@ -63,6 +62,11 @@ import CancelModal from "./CancelModal/index";
 import Column from "components/Column";
 import PositionDetails from "components/App/AccountData/PositionDetails";
 import { useCheckQuoteIsExpired } from "lib/hooks/useCheckQuoteIsExpired";
+import dynamic from "next/dynamic";
+
+const LottieCloverfield = dynamic(
+  () => import("components/Icons/LottieCloverfield")
+);
 
 const TableStructure = styled(RowBetween)<{ active?: boolean }>`
   width: 100%;

@@ -8,9 +8,13 @@ import LOADING_CHART from "/public/static/images/etc/LoadChart.svg";
 import { useActiveMarket } from "@symmio/frontend-sdk/state/trade/hooks";
 
 import { Card } from "components/Card";
-import { LottieCloverfield } from "components/Icons";
 import TVChart from "components/App/Chart/TVChart";
 import { RowCenter } from "components/Row";
+import dynamic from "next/dynamic";
+
+const LottieCloverfield = dynamic(
+  () => import("components/Icons/LottieCloverfield")
+);
 
 const Wrapper = styled(Card)`
   display: flex;

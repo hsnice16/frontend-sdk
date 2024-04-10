@@ -1,32 +1,16 @@
 import { configureChains, createConfig } from "wagmi";
-import { publicProvider } from "wagmi/providers/public";
-import { connectorsForWallets } from "@rainbow-me/rainbowkit";
-import {
-  injectedWallet,
-  rabbyWallet,
-  rainbowWallet,
-  metaMaskWallet,
-  coinbaseWallet,
-  walletConnectWallet,
-  safeWallet,
-} from "@rainbow-me/rainbowkit/wallets";
+import { getDefaultWallets } from "@rainbow-me/rainbowkit";
+import { alchemyProvider } from "wagmi/providers/alchemy";
 
 import { APP_CHAINS } from "constants/chains/chains";
 import { APP_NAME } from "constants/chains/misc";
 
+const EXAMPLE_PROJECT_ID = "21fef48091f12692cad574a6f7753643";
+
 export const getWagmiConfig = () => {
-  if (!process.env.NEXT_PUBLIC_INFURA_KEY) {
-    throw new Error("NEXT_PUBLIC_INFURA_KEY not provided");
-  }
-
-  if (!process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID) {
-    throw new Error("NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID not provided");
-  }
-
-  const projectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID;
   const { chains, publicClient, webSocketPublicClient } = configureChains(
     APP_CHAINS,
-    [publicProvider()],
+    [alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_KEY })],
     {
       batch: { multicall: true },
       retryCount: 5,
@@ -35,26 +19,12 @@ export const getWagmiConfig = () => {
     }
   );
 
-  const connectors = connectorsForWallets([
-    {
-      groupName: "Popular",
+  const { connectors } = getDefaultWallets({
+    appName: APP_NAME,
+    chains,
+    projectId: EXAMPLE_PROJECT_ID,
+  });
 
-      wallets: [
-        injectedWallet({ chains }),
-        metaMaskWallet({ projectId, chains }),
-        rabbyWallet({ chains }),
-        walletConnectWallet({ projectId, chains }),
-      ],
-    },
-    {
-      groupName: "Others",
-      wallets: [
-        coinbaseWallet({ chains, appName: APP_NAME }),
-        rainbowWallet({ projectId, chains }),
-        safeWallet({ chains }),
-      ],
-    },
-  ]);
   return {
     wagmiConfig: createConfig({
       autoConnect: true,

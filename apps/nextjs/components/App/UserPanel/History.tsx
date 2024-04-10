@@ -27,7 +27,6 @@ import PositionDetails from "components/App/AccountData/PositionDetails";
 import {
   EmptyPosition,
   LongArrow,
-  LottieCloverfield,
   NotConnectedWallet,
   Rectangle,
   ShortArrow,
@@ -43,6 +42,11 @@ import {
   EmptyRow,
   LeverageWrap,
 } from "./Common";
+import dynamic from "next/dynamic";
+
+const LottieCloverfield = dynamic(
+  () => import("components/Icons/LottieCloverfield")
+);
 
 const TableStructure = styled(RowBetween)`
   width: 100%;
