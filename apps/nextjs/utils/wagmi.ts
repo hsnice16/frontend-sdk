@@ -10,7 +10,7 @@ const EXAMPLE_PROJECT_ID = "21fef48091f12692cad574a6f7753643";
 export const getWagmiConfig = () => {
   const { chains, publicClient, webSocketPublicClient } = configureChains(
     APP_CHAINS,
-    [alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_KEY })],
+    [alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_KEY ?? "" })],
     {
       batch: { multicall: true },
       retryCount: 5,
