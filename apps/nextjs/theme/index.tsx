@@ -198,7 +198,7 @@ export default function ThemeProvider({
 
   return (
     <StyledComponentsThemeProvider theme={themeObject}>
-      {children}
+      <>{children}</>
     </StyledComponentsThemeProvider>
   );
 }
