@@ -63,6 +63,7 @@ function AccountPositionsBody({ positions }: { positions: Quote[] }) {
   const colors = useGenerateRandomColors(marketQuotesInfo.length);
 
   return (
+    // @ts-ignore
     <AccountPositionsContext.Provider value={{ marketQuotesInfo, colors }}>
       <PositionStatus />
       <ChartInfo>
